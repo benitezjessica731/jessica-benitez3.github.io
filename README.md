@@ -9,6 +9,8 @@
 6) In terminal, type => sudo apt-get install subversion
 7) In terminal, type => npm install -g opspark
 8) In terminal, type => os install
+9) Select bootcamp session
+10) Select project to install
 
 # How to test projects
 1) In terminal, type => os test
