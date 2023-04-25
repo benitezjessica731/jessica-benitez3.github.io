@@ -82,7 +82,8 @@ return string.split(" ").join("-").toLowerCase();
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
 
-    
+ //return true if the string begins with the character, false otherwise
+
 
     // YOUR CODE ABOVE HERE //
 }
@@ -115,7 +116,7 @@ function endsWith(string, char) {
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+stringOne + stringTwo;
 
     // YOUR CODE ABOVE HERE //
 }

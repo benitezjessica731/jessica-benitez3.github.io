@@ -20,13 +20,20 @@
  */
 
 function reverseString(input) {
-    // YOUR CODE GOES BELOW HERE //
-    
-    
-    
-    
-    // YOUR CODE GOES ABOVE HERE //
+  // YOUR CODE GOES BELOW HERE //
+ //create a new string  
+var newString = "";
+//create a for loop
+for (var i = input.length -1; i >=0; i--){
+  //concatenate strings
+  newString += input[i];
 }
+return newString;
+  
+  // YOUR CODE GOES ABOVE HERE //
+}
+
+
 
 
 
