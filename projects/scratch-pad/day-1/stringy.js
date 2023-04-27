@@ -83,7 +83,7 @@ function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
 
  //return true if the string begins with the character, false otherwise
-
+console.log(string.startsWith("string", "s"));
 
     // YOUR CODE ABOVE HERE //
 }
@@ -116,7 +116,7 @@ function endsWith(string, char) {
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-stringOne + stringTwo;
+console.log(stringOne.concat(' ', stringTwo));
 
     // YOUR CODE ABOVE HERE //
 }

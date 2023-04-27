@@ -14,9 +14,8 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+   
+    console.log(typeof []); 
     
     // YOUR CODE ABOVE HERE //
 }
@@ -32,8 +31,10 @@ function isArray(value) {
 function isObject(value) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    if (typeof value === "object") {
+        return true;
+    }
+    return false;
     
     // YOUR CODE ABOVE HERE //
 }
