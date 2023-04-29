@@ -83,7 +83,7 @@ function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
 
  //return true if the string begins with the character, false otherwise
-console.log(string.startsWith("string", "s"));
+
 
     // YOUR CODE ABOVE HERE //
 }
@@ -115,8 +115,8 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-console.log(stringOne.concat(' ', stringTwo));
+    //given two input strings return the strings concatenated into one
+    return stringOne += stringTwo;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -134,7 +134,8 @@ console.log(stringOne.concat(' ', stringTwo));
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
+    //given any number of strings, return all of them joined together
+    
 
     // YOUR CODE ABOVE HERE //
 }
@@ -150,7 +151,13 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    //given two strings return the longest of the two
+    if (stringOne.length > stringTwo.length) {
+        return stringOne;
+        //else return stringtwo
+    } else {
+        return stringTwo;
+    }
 
 
     // YOUR CODE ABOVE HERE //
