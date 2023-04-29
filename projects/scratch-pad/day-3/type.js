@@ -14,8 +14,13 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-   
-    console.log(typeof []); 
+    //given an input value, return true if the value is an array
+   if (Array.isArray(value)) {
+    return true;
+    //return false if else
+   } else {
+    return false;
+   }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -30,12 +35,7 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
-    if (typeof value === "object") {
-        return true;
-    }
-    return false;
-    
+
     // YOUR CODE ABOVE HERE //
 }
 
