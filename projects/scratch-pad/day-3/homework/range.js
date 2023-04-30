@@ -23,12 +23,22 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+    //create a variable named array
+    var array = [];
+    //create for loop
+    for (var i = start; i <= end; i++) {
+    //use push method to array
+        array.push(i);
+        }
+    return array;
+    }
     
-    
-    
+range(11,22);
+
+
     
     // YOUR CODE GOES ABOVE HERE //
-}
+
 
 
 
