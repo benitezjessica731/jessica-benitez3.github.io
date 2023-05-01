@@ -59,25 +59,14 @@ function makeContactList() {
             return contacts.push(contact);
         },
         findContact: function(fullName) {
-            var fullName = nameFirst + lastName;
-            //create for loop
-            for (var i = 0; i < contacts.length; i++){
-                if (contacts[i][fullName] === fullName){
-                    return contacts[i];
-                }
-            }
-
+            
         },
         removeContact: function(contact) {
-            //create for loop
-            for (var i = 0; i < contacts.length; i++) {
-                if (contacts[i] === contact) {
-                return contacts.splice(i, 1)
-                }
-            }
+            return contacts.splice(contact, 1);
+        }
+            
             //return the contact object matching the input fullName
-            return 
-        },
+            
     } // => returns object
 }
 

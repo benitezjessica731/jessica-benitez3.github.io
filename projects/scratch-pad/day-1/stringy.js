@@ -83,7 +83,12 @@ function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
 
  //return true if the string begins with the character, false otherwise
-
+    if (string[0].toLowerCase() === char.toLowerCase()) {
+        return true;
+ //return false if otherwise
+    } else {
+        return false;
+    }
 
     // YOUR CODE ABOVE HERE //
 }
@@ -102,7 +107,13 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
+    //create if statement to determine if the string ends with the last character
+    if (string[string.length - 1].toLowerCase() === char.toLowerCase()) {
+        return true;
+    //return false if the string does not end with the last character
+    } else {
+        return false;
+    }
 
 
     // YOUR CODE ABOVE HERE //
@@ -134,7 +145,6 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-    //given any number of strings, return all of them joined together
     
 
     // YOUR CODE ABOVE HERE //
@@ -172,7 +182,18 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    //create if statement to determine if the first string is higher in alphabetical order than the second
+    if (stringOne[0] > stringTwo[0]) {
+    //return 1 if true
+        return 1;
+    //create if statement to determine if the second is higher in alphabetical order than the first
+    } else if (stringOne[0] < stringTwo[0]) {
+    //return -1 if true
+        return -1;
+    // else return 0
+    } else {
+        return 0;
+    }
 
 
     // YOUR CODE ABOVE HERE //
@@ -188,8 +209,18 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
+    //create if statement to determine if the first string is lower in alphabetical order than the second
+    if (stringOne[0] > stringTwo[0]) {
+    //return 1 if true
+        return 1;
+    //create else if statement to determine if the second string is lower in alphabetical order than the first
+    } else if (stringOne[0] < stringTwo[0]) {
+    //return -1 if true
+        return -1;
+    //return 0 if they are equal
+    } else {
+        return 0;
+    }
 
 
     // YOUR CODE ABOVE HERE //
