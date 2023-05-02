@@ -111,23 +111,41 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
+    //create if statement to determine if typeof value is string
     if (typeof value === "string") {
+    //return "string"
         return "string";
+    //create else if to determine if value is equal to array
     } else if (Array.isArray(value) === true) {
+    //return "array"
        return "array";
+    //create else if to determine if value is undefined
     } else if (typeof value === "undefined") {
+    //return "undefined"
         return "undefined";
+    //create else if to determine if typeof value is equal to number
     } else if (typeof value === "number") {
+    //return "number"
         return "number";
+    //create else if typeof value is equal to boolean
     } else if (typeof value === "boolean") {
+    //return "boolean"
         return "boolean";
+    //create else if to determine if value is equal to bull
     } else if (value === null) {
+    //return "null"
         return "null";
+    //create else if to determine if typeof value is function
     } else if (typeof value === "function") {
+    //return function
         return "function";
+    //create else if to determine if value is equal to date
     } else if (value instanceof Date === true) {
+    //return "date"
         return "date";
+    //create else if to determine if value is equal to object
     } else if (typeof value === "object") {
+    //return object
         return "object";
     }
     
