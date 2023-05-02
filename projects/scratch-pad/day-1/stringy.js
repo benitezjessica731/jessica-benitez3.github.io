@@ -145,7 +145,7 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-    
+    return args.join("");
 
     // YOUR CODE ABOVE HERE //
 }
@@ -182,19 +182,8 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    //create if statement to determine if the first string is higher in alphabetical order than the second
-    if (stringOne[0] > stringTwo[0]) {
-    //return 1 if true
-        return 1;
-    //create if statement to determine if the second is higher in alphabetical order than the first
-    } else if (stringOne[0] < stringTwo[0]) {
-    //return -1 if true
-        return -1;
-    // else return 0
-    } else {
-        return 0;
-    }
-
+    //use localecompare to return if string two is higher in alphabetical order
+    return stringTwo.localeCompare(stringOne);
 
     // YOUR CODE ABOVE HERE //
 }
@@ -209,19 +198,8 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    //create if statement to determine if the first string is lower in alphabetical order than the second
-    if (stringOne[0] > stringTwo[0]) {
-    //return 1 if true
-        return 1;
-    //create else if statement to determine if the second string is lower in alphabetical order than the first
-    } else if (stringOne[0] < stringTwo[0]) {
-    //return -1 if true
-        return -1;
-    //return 0 if they are equal
-    } else {
-        return 0;
-    }
-
+    //use localecompare to return if string two is lower in alphabtical order than the first
+    return stringOne.localeCompare(stringTwo);
 
     // YOUR CODE ABOVE HERE //
 }
