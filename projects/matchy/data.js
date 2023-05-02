@@ -91,11 +91,38 @@ var duck = {
 animals.push(duck);
 //console.log animals
 console.log(animals);
+//create two more animal objects each with a species, a name, and at least two sounds and add each one of them to 'animals'
+var cat = {
+  species : "cat",
+  name : "Luna",
+  noises : ["meow", "purr"]
+};
+var snake = {
+  species : "snake",
+  name : "Snakey",
+  noises : ["hiss", "rattle"]
+};
+//add each new animal to animals array
+animals.push(cat);
+animals.push(snake);
+//console log animals
+console.log(animals);
+//console log animals length
+console.log(animals.length); //4
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//choose a data structure for this list of friends
+//choosing to choose an array as the data structure as I feel it is easier to pull elements into and out of an array versus objects
+//create a variable called friends and assign it the data structure that was chosen
+var friends = [];
+//write a function called getRandom that takes the animals array and returns a random index of the input array, using math.random
+function getRandom(animals) {
+  return Math.floor(Math.random() * animals.length);
+}
+//using a random index from this function, get a random animal and add its name to friends
+getRandom(animals);
 
 
 /**
