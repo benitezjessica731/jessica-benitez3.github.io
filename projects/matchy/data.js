@@ -118,12 +118,15 @@ console.log(animals.length); //4
 //create a variable called friends and assign it the data structure that was chosen
 var friends = [];
 //write a function called getRandom that takes the animals array and returns a random index of the input array, using math.random
-function getRandom(animals) {
-  return Math.floor(Math.random() * animals.length);
+function getRandom(array) {
+  return Math.random(array);
 }
 //using a random index from this function, get a random animal and add its name to friends
-getRandom(animals);
-
+friends.push(animal["name"]);
+//using bracket notation add the friends list as a property also named friends on one of the animals in the animals array
+animal["friends"] = friends;
+//console log
+console.log(animals);
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
