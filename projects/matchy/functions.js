@@ -12,7 +12,16 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//implement a function declaration called search which takes an array of animals as parameter, and a string 
+function search(array, string) {
+//create a for loop to look through animals array and return's animals object
+    for (var i = 0; i < array.length; i++)
+//create if statement, if animal exists
+     if (array[i].name === string) {
+        return array[i];
+    } 
+   return null;
+}
 
 
 //////////////////////////////////////////////////////////////////////
