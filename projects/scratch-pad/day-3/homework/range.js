@@ -26,12 +26,14 @@ function range(start, end) {
     //create a variable named array
     var array = [];
     //create for loop
-    for (var i = start; i <= end; i++) {
-    //use push method to array
+    for (var i = 0; i <= array; i++) 
+    //create if statement to determine if the first output is greater than the second
+    if (start > end) {
+        //use push method to array
         array.push(i);
         }
     return array;
-    }
+}
     
 range(11,22);
 
