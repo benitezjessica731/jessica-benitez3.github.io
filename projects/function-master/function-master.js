@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
-
+    return Object.values(object);
 } 
 
 //////////////////////////////////////////////////////////////////////
@@ -11,7 +11,7 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
-
+    return Object.keys(object)
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -27,7 +27,21 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+    if (Array.isArray(collection)){
+        //return array
+            return "array";
+        //create else if statement to determine if collection is equal to null
+        } else if (collection === null){
+            return false;
+        //create else if statement to determine if collection is equal to date using instanceof
+        } else if (collection instanceof Date){
+        //return false
+            return false;
+        //create else if statement to determine if collection is equal to object
+        } else if (typeof collection === "object") {
+        //return false
+            return "object";
+}
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -35,7 +49,7 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -43,7 +57,15 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+    //split string into an array
+    var array = string.split(" ");
+    //create for loop to interate over each element in array
+    for (var i = 0; i < array.length; i++) {
+    //capitalize the first letter at each element
+        array[i] = array[i].charAt(0).toUpperCase() + array[i].slice(1);
+    }
+    //return the array back into a string
+    return array.join(" ");
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -51,7 +73,7 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-
+    
 }
 
 //////////////////////////////////////////////////////////////////////
