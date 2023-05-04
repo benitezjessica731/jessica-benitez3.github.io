@@ -30,9 +30,7 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    return function(value) {
-        return value < base;
-    }
+
     
     
     
@@ -46,9 +44,7 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    return function(string) {
-        return string.charAt(0) === startsWith;
-      }
+
     
     
     
@@ -62,9 +58,7 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    return function(string) {
-        return string.charAt(string.length - 1) === endsWith;
-    }
+
     
     
     
@@ -80,11 +74,7 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    var modifiedStrings = [];
-    for (let i = 0; i < strings.length; i++) {
-        modifiedStrings.push(modifyFunc(strings[i]));
-        return modifiedStrings;
-    }
+      
     
     
     
@@ -102,8 +92,7 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
-    
+
     
     
     // YOUR CODE ABOVE HERE //

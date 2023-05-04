@@ -72,23 +72,32 @@ function makeContactList() {
         },
         removeContact: function(contact) {
             return contacts.splice(contact, 1);
-        }
-            
+        },
+        printAllContactNames: function() {
+            //create an empty output
+            var output = '';
+            //create for loop to iterate over contacts
+            for (var i = 0; i < contacts.length; i++) {
+            //set output equal to contacts namefirst, space, and contacts namelast
+            output += contacts[i].nameFirst + ' ' + contacts[i].nameLast;
+            //create if statement to not have the last contact seperated with \n
+            if (i !== contacts.length - 1) {
+            //seperate the fullnames by using \n
+            output += '\n';
+            }
+            }
+            return output;
+    }   
 
             
     } // => returns object
 
 }
-function printAllContactNames() {
-        //declare empty array
-        var array = [];
-        //create for loop to iterate over the contacts
-        for (var i = 0; i < contacts.length; i++) {
-            
-        }
 
     
-}
+
+    
+
 
 
 
