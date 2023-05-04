@@ -23,19 +23,31 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    //create a variable named array
-    var array = [];
+    //declare result to an empty array
+    var result = [];
+    //create if statement to determine if start integer is less than or equal to the end integer
+    if (start <= end) {
     //create for loop
-    for (var i = 0; i <= array; i++) 
-    //create if statement to determine if the first output is greater than the second
-    if (start > end) {
-        //use push method to array
-        array.push(i);
-        }
-    return array;
-}
+      for (let i = start; i <= end; i++) {
+    //push the index to the array
+        result.push(i);
+      }
+    //create else statement
+    } else {
+    //create for loop to determine if start integer is greater than or equal to the end integer
+      for (let i = start; i >= end; i--) {
+    //push the index to the created array
+        result.push(i);
+      }
+    }
+  
+    return result;
+  
     
-range(11,22);
+}
+
+    
+
 
 
     

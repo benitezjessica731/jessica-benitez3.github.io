@@ -59,17 +59,36 @@ function makeContactList() {
             return contacts.push(contact);
         },
         findContact: function(fullName) {
-            
+            //create for loop to iterate over the contacts
+            for (var i = 0; i < contacts.length; i++)
+            //create if statement to determine if contacts firstName + " " + nameLast is strictly equal to fullName
+                if(fullName === contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]) { 
+            //return contacts[i]
+                return contacts[i];
+            //else, if fullName is not found in contacts, return undefined
+                } else {
+                    return undefined;
+                }
         },
         removeContact: function(contact) {
             return contacts.splice(contact, 1);
         }
             
-            //return the contact object matching the input fullName
+
             
     } // => returns object
-}
 
+}
+function printAllContactNames() {
+        //declare empty array
+        var array = [];
+        //create for loop to iterate over the contacts
+        for (var i = 0; i < contacts.length; i++) {
+            
+        }
+
+    
+}
 
 
 
