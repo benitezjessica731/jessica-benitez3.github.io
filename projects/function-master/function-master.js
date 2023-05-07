@@ -11,7 +11,7 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
-    return Object.keys(object)
+    return Object.keys(object).join(" ");
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -19,8 +19,22 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
-}
+    //declare result to an empty string
+    var result = "";
+    //use a for loop to iterate over object
+    for (var key in object) {
+    //declare value to the key value of object
+      var value = object[key];
+      //create if statement to see if typeof value is strictly equal to a string
+      if (typeof value === 'string') {
+        //concat the result and value plus a space
+        result += value + ' ';
+      }
+    }
+    //return result by trimming the end
+    return result.trim();
+  }
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
@@ -71,17 +85,32 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//Should take an object with a name property and return 'Welcome <Name>!
 
 function welcomeMessage(object) {
+    //return welcome to an object with a name property
+    return "Welcome " + object.name.charAt(0).toUpperCase() + object.name.slice(1) + "!";
     
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 8 - Profile Info /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//Should take an object with a name an a species and return '<Name> is a <Species>'"
 
 function profileInfo(object) {
-
+    //create a variable called name and set equal to the name property
+    var name = object.name;
+    //create a variable called species and set equal to the species property
+    var species = object.species;
+    //capitalize the first letter in name
+    name = name.charAt(0).toUpperCase() + name.slice(1);
+    //capitalize the first letter in species
+    species = species.charAt(0).toUpperCase() + species.slice(1);
+    //return name is a species
+            return name + " is a " + species;
+        
+    
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -89,39 +118,88 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
+    //Should take an object, if this object has a noises array return them 
+    //as a string separated by a space, if there are no noises return 'there are no noises'"
 
+    //create for in loop to check if object has a noises array
+    for (var key in object) {
+        //create if statement to check that the key is equal to noises
+        if (key === "noises") {
+    //check if noises is an array
+        if (Array.isArray(object.noises)) { 
+        //check length is > 0
+        if (object.noises.length > 0) { 
+            return object.noises.join(' ');
+        }
+    }
 }
+    }
+        // didn't pass the above tests, so return this string
+        return 'there are no noises'; 
+}
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//Should take a string of words and a word and return true if <word> is in <string of words>, otherwise return false."
 
 function hasWord(string, word) {
-
+    if (string.includes(word)) {
+        return true;
+    } else {
+        return false;
+    }
 }
-
 //////////////////////////////////////////////////////////////////////
 // Function 11 - Add Friend //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//Should take a name and an object and add the name to the object's friends array then return the object"
 
 function addFriend (name, object) {
-
+    for (var key in object) {
+        if (key === "friends") {
+            object[key].push(name);
+        }
+    }   
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 12 - Is Friend ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//Should take a name and an object and return true if <name> is a friend of <object> and false otherwise
 
 function isFriend(name, object) {
+    //create a variable called friends and set equal to the friends array from the object
+    var friends = object.friends;
+    //create if statement if friends exists
+        if(friends) {
+    //create for loop to iterate over friends array
+        for (var i = 0; i < friends.length; i++) {
+    //create if statement to see if the friends index contains name
+            if(friends[i] === name) {
+    //if so, return true
+            return true;
+         } 
 
+        }
+    
+    } 
+    //if not, return false
+    return false;
 }
-
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//Should take a name and a list of people, and return a list of all the names that <name> is not friends with
 function nonFriends(name, array) {
-
+    //create a variable called friends and set equal to an empty array
+    var nonFriends = [];
+    for (var i = 0; i < nonFriends.length; i++){
+        if(nonFriends[i] !== name)
+        return nonFriends[i];
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
