@@ -19,22 +19,19 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    //declare result to an empty string
-    var result = "";
-    //use a for loop to iterate over object
-    for (var key in object) {
-    //declare value to the key value of object
-      var value = object[key];
-      //create if statement to see if typeof value is strictly equal to a string
-      if (typeof value === 'string') {
-        //concat the result and value plus a space
-        result += value + ' ';
-      }
+    //declare an empty array called arr
+    var storArr = [];
+    //create for loop to loop over object
+    for (var key in object){
+        //create if typeof statement to see if any values are equal to strings
+        if (typeof object[key] === "string") {
+            //if true, push the value into the declared array
+            storArr.push(object[key]);
+        }
     }
-    //return result by trimming the end
-    return result.trim();
-  }
-
+    //return the array with join method, adding a space, to return to string
+    return storArr.join(" ");
+}
 
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
@@ -194,36 +191,74 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 //Should take a name and a list of people, and return a list of all the names that <name> is not friends with
 function nonFriends(name, array) {
-    //create a variable called friends and set equal to an empty array
+    //create a variable called nonFriends and set equal to an empty array
     var nonFriends = [];
-    for (var i = 0; i < nonFriends.length; i++){
-        if(nonFriends[i] !== name)
-        return nonFriends[i];
+    //create for loop to loop over array
+    for (var i = 0; i < array.length; i++){
+        //create if statement if the name in the array does not equal name and the array does not include name
+        if(array[i].name !== name && !array[i].friends.includes(name)){
+        //push the array into the nonfriends array
+        nonFriends.push(array[i].name);
     }
+    //return nonfriends 
+}   return nonFriends;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//Should take an object, a key and a value. Should update the property <key>
+// on <object> with new <value>. If <key> does not exist on <object> create it."
 
 function updateObject(object, key, value) {
-
+    //create if statement to check if the object has the property key
+    if (object[key] === value) {
+    //if the property exists, set equal to value
+        object[key] = value;
+    //create else statement
+    } else {
+    //if the key does not exist, set it equal to the value
+        object[key] = value;
+    }
+    //return the updated object
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//Should take an object and an array of strings. Should remove any properties on <object> that are listed in <array>"
 
 function removeProperties(object, array) {
-
+    //create a for loop to iterate over array's properties
+    for (var i = 0; i < array.length; i++) {
+    //create a new variable called key and set to equal array[i]
+    var key = array[i];
+    //create if statement and object.hasOwnProperty method to see if any properties on object are listed in array
+        if (object.hasOwnProperty(key)) {
+    //if any are equal, delete that object's property
+            delete object[key];
+        }
 }
-
+}
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//Should take an array and return an array with all the duplicates removed
 
 function dedup(array) {
-
+    //declare an empty storage array
+    var storArr = [];
+    //create a for loop to iterate over array
+    for (var i = 0; i < array.length; i++) {
+        //create conditional if statement and includes method to see if the storArr does not include element
+        if (!storArr.includes(array[i])) {
+        //if there is a duplicate, push into the storage array
+            storArr.push(array[i]);
+        }
+    }
+    //return the storage array
+    return storArr;
 }
 
 //////////////////////////////////////////////////////////////////////
