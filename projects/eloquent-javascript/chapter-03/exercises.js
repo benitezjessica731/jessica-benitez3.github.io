@@ -41,7 +41,7 @@ function countChars(str, char) {
   for (let i = 0; i < str.length; i++) {
     //create if statement to determine if any char are equal to str[i]
     if (str[i] === char) {
-
+      //use count++ to add 1 every time str[i] is equal to char
       count++;
     }
   }
@@ -59,6 +59,7 @@ function countBs(str) {
   for (let i = 0; i < str.length; i++) {
     //create an if statement to see if there are any B's in the string
     if (str[i] === "B") {
+      //use count++ to add 1 every time str[i] is equal to 'B'
       count++;
     }
   }
