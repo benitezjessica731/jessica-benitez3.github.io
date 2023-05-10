@@ -272,6 +272,20 @@ _.each = function(collection, func) {
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique = function(array) {
+    //create a var and set equal to an empty array
+    var uniqueArray = [];
+    //create a for loop to iterate over array
+    for (var i = 0; i < array.length; i++) {
+    //create if statement using the indexof method to check for duplicates
+      if (_.indexOf(uniqueArray, array[i]) === -1) {
+        //if it is unique, push the element onto the array
+        uniqueArray.push(array[i]);
+      }
+    }
+    //return the new array
+    return uniqueArray;
+}
 
 /** _.filter
 * Arguments:
@@ -415,6 +429,26 @@ _.each = function(collection, func) {
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
+_.reduce = function(array,func,seed){
+    let result;
+    //determine if seed was not passed in
+    if (seed === undefined){
+    //use the first element in array as seed
+        result = array[0];
+        for (let i = 1; i < array.length; i++){
+            //reassign result to func invocation
+            result = func(result, array[i], i, array);
+        }
+    //else it was
+    } else {
+        result = seed;
+        for (let i = 0; i < array.length; i++) {
+            //reassign result to func invocation
+            result = func(result, array[i], i, array);
+        }
+    }
+    return result;
+}
 
 
 /** _.extend
