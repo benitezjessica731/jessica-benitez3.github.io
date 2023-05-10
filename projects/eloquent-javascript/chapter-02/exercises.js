@@ -64,15 +64,15 @@ function drawChessboard(x) {
       //create if statement to determine if even
       if ((i + j) % 2 === 0) {
         //if even, start the line with a space
-        board += ' ';
+        board += " ";
         //create else
       } else {
         //else start the line with a #
-        board += '#';
+        board += "#";
       }
     }
     // Add a line break after each row
-    board += '\n'; 
+    board += "\n"; 
   }
   //log console
   console.log(board);
