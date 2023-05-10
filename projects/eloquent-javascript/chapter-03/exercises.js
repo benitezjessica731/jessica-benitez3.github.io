@@ -34,18 +34,40 @@ function isEven(num) {
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countChars() {
+function countChars(str, char) {
+  //create a let called count and set equal to 0
+  let count = 0;
+  //create a foor loop to iterate over str
+  for (let i = 0; i < str.length; i++) {
+    //create if statement to determine if any char are equal to str[i]
+    if (str[i] === char) {
 
+      count++;
+    }
+  }
+  return count;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // countBs /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countBs() {
-
+function countBs(str) {
+  //create a let called count and set it to 0
+  let count = 0;
+  //create a for loop to iterate over string
+  for (let i = 0; i < str.length; i++) {
+    //create an if statement to see if there are any B's in the string
+    if (str[i] === "B") {
+      count++;
+    }
+  }
+  return count;
 }
-
+//return function countChars in the countBs function
+function countBs(str, char){
+  return countChars(str, 'B');
+}
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
