@@ -246,7 +246,7 @@ _.contains = function (array, value) {
 */
 
 _.each = function(collection, func) {
-    //determine if collection is array
+    //determine if collection is an array
     if (Array.isArray(collection)) {
         //call function once for each element
         for (var i = 0; i < collection.length; i++){
@@ -274,17 +274,17 @@ _.each = function(collection, func) {
 
 _.unique = function(array) {
     //create a var and set equal to an empty array
-    var uniqueArray = [];
+    var output = [];
     //create a for loop to iterate over array
     for (var i = 0; i < array.length; i++) {
     //create if statement using the indexof method to check for duplicates
-      if (_.indexOf(uniqueArray, array[i]) === -1) {
+      if (_.indexOf(output, array[i]) === -1) {
         //if it is unique, push the element onto the array
-        uniqueArray.push(array[i]);
+        output.push(array[i]);
       }
     }
     //return the new array
-    return uniqueArray;
+    return output;
 }
 
 /** _.filter
@@ -317,6 +317,7 @@ _.filter = function(array, func){
     return newArray;
 }
 
+
 /** _.reject
 * Arguments:
 *   1) An array
@@ -329,6 +330,7 @@ _.filter = function(array, func){
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
+
 _.reject = function(array, func){
     //let newArray equal to an empty array
     let newArray = [];
@@ -362,7 +364,11 @@ _.reject = function(array, func){
 *   }); -> [[2,4],[1,3,5]]
 }
 */
-
+_.partition = function(array, func) {
+    _.each(array, function(element, key, array){
+        
+    })
+}
 
 /** _.map
 * Arguments:
@@ -492,9 +498,9 @@ _.reduce = function(array,func,seed){
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 //Object.assign()
-._extend = function (target, ...copyFrom) {
 
-};
+
+
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
