@@ -302,7 +302,20 @@ _.unique = function(array) {
 * Extra Credit:
 *   use _.each in your implementation
 */
-
+_.filter = function(array, func){
+    //let newarray set equal to an array
+    let newArray = [];
+    //call _.each function passing element, index, and array as arguments
+    _.each(array, function(element, index, array){
+        //create if statement to determine if true
+        if(func(element, index, array)){
+            //add element to new array
+            newArray.push(element);
+        }
+    });
+    //return the newarray
+    return newArray;
+}
 
 /** _.reject
 * Arguments:
@@ -316,7 +329,20 @@ _.unique = function(array) {
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
-
+_.reject = function(array, func){
+    //let newArray equal to an empty array
+    let newArray = [];
+    //call _.each function with element, index, and array as arguments
+    _.each(array, function(element, index, array){
+        //create if statement to determine if false
+        if(!func(element, index, array)){
+            //push the element onto the new array
+            newArray.push(element);
+        }
+    });
+    //return the new array
+    return newArray;
+}
 
 /** _.partition
 * Arguments:
@@ -465,7 +491,10 @@ _.reduce = function(array,func,seed){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+//Object.assign()
+._extend = function (target, ...copyFrom) {
 
+};
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
