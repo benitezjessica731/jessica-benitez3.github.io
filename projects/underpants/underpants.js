@@ -365,9 +365,24 @@ _.reject = function(array, func){
 }
 */
 _.partition = function(array, func) {
+    //declare truthyvalues to an empty array
+    let truthyValues = [];
+    //declare falsyvalues to an empty array
+    let falsyValues = [];
+    //call the _.each function for each element in the array passing in the arguments, element, key, array
     _.each(array, function(element, key, array){
-        
-    })
+        //create if statement if the function returns a truthy value
+        if (func(element, key, array)) {
+            //if true, push the element onto the truthy array
+            truthyValues.push(element)
+        //create else
+        } else {
+            //if false, push the element onto the falsy array
+            falsyValues.push(element);
+        }
+    });
+    //return an array of truthyvalues and falsyvalues
+    return [truthyValues, falsyValues];
 }
 
 /** _.map
