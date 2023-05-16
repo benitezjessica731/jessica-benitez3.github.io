@@ -461,12 +461,21 @@ _.pluck = function (array, property) {
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
-._every = function (collection, func) {
-    if (Array.isArray(collection)) {
-        for (let i = 0; i < collection.length; i++) {
-            
-        }
+_.every = function (collection, func) { 
+    if (typeof func !== "function") {
+        return collection.every(function(element) {
+            return Boolean(element);
+        });
+    } else if (Array.isArray(collection)){
+        return collection.every(function(element, index) {
+            return func(element, index, collection);
+        });
+    } else if (typeof collection === "object" && collection !== null){
+        return Object.values(collection).every(function(value, key){
+            return func(value, Object.keys(collection)[key], collection);
+        });
     }
+    return false;
 }
 
 /** _.some
@@ -489,7 +498,28 @@ _.pluck = function (array, property) {
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
-
+_.some = function (collection, func){
+    //use if statement to determine if func is not a function
+    if (typeof func !== "function") {
+        return collection.some(function(element) {
+            return Boolean(element);
+        });
+    //create else if statement to determine if collection is an array
+    } else if (Array.isArray(collection)){
+        //iterate over each item in array 
+        return collection.some(function(element, index) {
+            //
+            return func(element, index, collection);
+        });
+    //create else if to determine if collection is an object
+    } else if (typeof collection === "object" && collection !== null){
+        return Object.values(collection).some(function(value, key){
+            return func(value, Object.keys(collection)[key], collection);
+        });
+    }
+    //return false if collection is another type of data
+    return false;
+}
 
 /** _.reduce
 * Arguments:
@@ -546,6 +576,21 @@ _.reduce = function(array,func,seed){
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 //Object.assign()
+_.extend = function (object1, ...objects) {
+    //use for each to iterate over each object
+    objects.forEach(function(object){
+        //create if statement to determine if object is an object
+        if (typeof object === "object" && typeof object !== null){
+            //use for in loop to iterate over object
+            for (var key in object){
+                //copy properties using the assignment operator
+                object1[key] = object[key]
+            }
+        }
+    });
+    //return the updated object1
+    return object1;
+}
 
 
 
