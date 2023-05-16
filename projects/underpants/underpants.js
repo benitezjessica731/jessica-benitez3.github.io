@@ -400,7 +400,27 @@ _.partition = function(array, func) {
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
-
+_.map = function (collection, func) {
+    //declare an empty array to result
+    let result = [];
+    //create if statement to determine if collection is an array
+    if (Array.isArray(collection)) {
+    //create for loop to iterate through the array if it is an array
+      for (let i = 0; i < collection.length; i++) {
+        //push the function onto the result array
+        result.push(func(collection[i], i, collection));
+      }
+      //create else if to determine if collection is an object
+    } else if (typeof collection === 'object') {
+    //use for in loop for object
+      for (let key in collection) {
+        //push the function onto the result array
+        result.push(func(collection[key], key, collection));
+      }
+    }
+    //return the new array
+    return result;
+}
 
 /** _.pluck
 * Arguments:
@@ -413,6 +433,13 @@ _.partition = function(array, func) {
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+_.pluck = function (array, property) {
+    //return an array using the map function, with array and callback function as its arguments
+    return _.map(array, function(obj) {
+        //return the property
+        return obj[property];
+    });
+}
 
 /** _.every
 * Arguments:
@@ -434,7 +461,13 @@ _.partition = function(array, func) {
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
-
+._every = function (collection, func) {
+    if (Array.isArray(collection)) {
+        for (let i = 0; i < collection.length; i++) {
+            
+        }
+    }
+}
 
 /** _.some
 * Arguments:
