@@ -462,19 +462,29 @@ _.pluck = function (array, property) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 _.every = function (collection, func) { 
+    //create if statement to determine if func is not a function
     if (typeof func !== "function") {
+        //check if all elements are truthy
         return collection.every(function(element) {
+            //return 
             return Boolean(element);
         });
+    //create else if to determine if collection is an array
     } else if (Array.isArray(collection)){
+        //check if the function returns true for all elements in the array
         return collection.every(function(element, index) {
+            //return all elements
             return func(element, index, collection);
         });
+    //create if else statement to see if collection is an object
     } else if (typeof collection === "object" && collection !== null){
+        //check if the function returns true for all values in the object
         return Object.values(collection).every(function(value, key){
+            //return
             return func(value, Object.keys(collection)[key], collection);
         });
     }
+    //else return false
     return false;
 }
 
@@ -506,14 +516,16 @@ _.some = function (collection, func){
         });
     //create else if statement to determine if collection is an array
     } else if (Array.isArray(collection)){
-        //iterate over each item in array 
+        //check if the function returns true for all elements in the array
         return collection.some(function(element, index) {
-            //
+            //return
             return func(element, index, collection);
         });
     //create else if to determine if collection is an object
     } else if (typeof collection === "object" && collection !== null){
+        //check if the function returns true for all values in the object
         return Object.values(collection).some(function(value, key){
+            //return
             return func(value, Object.keys(collection)[key], collection);
         });
     }
