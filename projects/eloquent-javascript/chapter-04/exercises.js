@@ -2,8 +2,21 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range() {
-
+function range(start, end, step=1) {
+  let result = [];
+  if (start === end) {
+    return result;
+  }
+  if (step > 0){
+    for (let i = start; i <= end; i += step){
+      result.push(i);
+    } 
+  } else {
+    for (let i = start; i >= end; i += step){
+      result.push(i);
+    }
+  }
+  return result;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -34,15 +47,28 @@ function reverseArrayInPlace() {
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function arrayToList() {
+function arrayToList(array) {
+  let rest = null;
 
+  for (let i = array.length - 1; i >= 0; i--){
+    rest = {value: array[i], rest: rest};
+  }
+  return rest;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function listToArray() {
+function listToArray(list, output=[]) {
+  //base
+  if(list.rest === null){
+    output.push(list.value);
+    return output;
+  }
+  //recursion
+  output.push(list.value);
+  return listToArray(list.rest, output);
 
 }
 
@@ -66,8 +92,25 @@ function nth() {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
+function deepEqual(x, y) {
+  if (typeof x !== 'object' && typeof y !== 'object') {
+    return x === y;
+  }
+if (typeof x !== 'object' || typeof y !== 'object') {
+  return false;
+}
+let xKeys = Object.keys(x);
+let yKeys = Object.keys(y);
 
+if (xKeys.length !== yKeys.length){
+  return false;
+}
+for (let i = 0; i < xKeys.length; i++){
+  if(!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])){
+    return false;
+  }
+}
+return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
